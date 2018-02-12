@@ -3,13 +3,17 @@
 <html>
 <head>
 	<jsp:include page="../common/headLink.jsp" />
+	<link rel="stylesheet" href="/res/css/login.css">
+	
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-	<div class="wrapper">
+	<section class="input_login_wrap">
+		<div></div>
+	</section>
+	<div class="wrapper" style="overflow-y: hidden;">
 		<jsp:include page="../common/header.jsp" />
 		<jsp:include page="./sidebar.jsp" />
 		<jsp:include page="../common/control_sidebar.jsp" />
-
 
 
 		<!-- Content Wrapper. Contains page content -->
@@ -25,7 +29,7 @@
 			<section class="content container-fluid">
 
 				<div id="root"></div>
-				<script src="/res/bundle.js"></script>
+				
 
 				<!--------------------------
 		        | Your Page Content Here |
