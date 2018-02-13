@@ -1,4 +1,6 @@
+// 전역 객체
 var hc = {};
+// url에서 domain 반환
 hc.domain = function() {
     var url = location.href;
     url = url.substr( url.indexOf( "//" ) + 2 );
@@ -10,7 +12,16 @@ hc.domain = function() {
         uri = uri.substr(0, uri.indexOf("/"));
     }
     return uri === '' ? 'user' : uri;
-}
+};
+// 이전 페이지 url
+hc.refer = function() {
+	return document.referrer;
+};
+// 정규식
+hc.re = {
+		// 공백문자열
+		space : /\s/g
+};
 
 var StringBuffer = function() {
 	this.buffer = new Array();

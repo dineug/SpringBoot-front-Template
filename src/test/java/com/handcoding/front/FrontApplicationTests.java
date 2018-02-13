@@ -12,5 +12,5 @@ public class FrontApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
+	
 }

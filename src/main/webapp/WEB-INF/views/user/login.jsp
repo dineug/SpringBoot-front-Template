@@ -7,7 +7,38 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<section class="input_login_wrap">
-		<div></div>
+          <!-- Horizontal Form -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">사용자 로그인</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="inputID" class="col-sm-2 control-label">ID</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputID" placeholder="ID">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="button" class="btn btn-warning">회원가입</button>
+                <button type="button" class="btn btn-info pull-right">로그인</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
 	</section>
 	<div class="wrapper" style="overflow-y: hidden;">
 		<jsp:include page="../common/header.jsp" />

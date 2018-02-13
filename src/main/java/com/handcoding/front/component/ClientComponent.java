@@ -30,6 +30,7 @@ public class ClientComponent {
 	private SystemLoginClient systemLoginClient;
 	
 	// admin
+	@Autowired
 	private AdminLoginClient adminLoginClient;
 	
 	

@@ -1,7 +1,6 @@
 package com.handcoding.front.domain;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class UserVO extends CommonVO implements Serializable {
 	
@@ -13,7 +12,7 @@ public class UserVO extends CommonVO implements Serializable {
 	private String email;
 	private String userTypeCode;
 	private String statusCode;
-	private Date regDate;
+	private long regDate;
 	
 	public String getId() {
 		return id;
@@ -51,10 +50,10 @@ public class UserVO extends CommonVO implements Serializable {
 	public void setStatusCode(String statusCode) {
 		this.statusCode = statusCode;
 	}
-	public Date getRegDate() {
+	public long getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(Date regDate) {
+	public void setRegDate(long regDate) {
 		this.regDate = regDate;
 	}
 	@Override

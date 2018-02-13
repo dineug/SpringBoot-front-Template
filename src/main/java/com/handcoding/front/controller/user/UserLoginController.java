@@ -15,7 +15,7 @@ public class UserLoginController {
 	private ClientComponent client;
 	
 	@GetMapping("/p/login")
-	public String index() {
+	public String loginPage() {
 		return "user/login";
 	}
 	

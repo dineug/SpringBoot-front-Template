@@ -7,15 +7,11 @@
 }
 
 .input_login_wrap>div {
-	width: 500px;
-	height: 170px;
-	background-color: #fff;
-	position: absolute;
-	top: 35%;
-	left: 50%;
-	transform: translateX(-50%);
-	padding: 10px;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
-	border-top: 3px solid #3c8dbc;
+    width: 500px;
+    background-color: #fff;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
 }
