@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import com.handcoding.front.domain.OAuth2TokenVO;
 import com.handcoding.front.domain.OAuth2VO;
 import com.handcoding.front.domain.ResponseVO;
+import com.handcoding.front.util.ObjectUtil;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -24,7 +25,7 @@ public abstract class EndpointAPI<T> {
 	protected Retrofit retrofit;
 	protected String clientId;
 	protected String clientSecret;
-	
+	protected ObjectUtil objUtil = new ObjectUtil();
 	{
 		OkHttpClient client = new OkHttpClient.Builder()
 												.readTimeout(5, TimeUnit.SECONDS)

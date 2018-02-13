@@ -3,6 +3,7 @@ package com.handcoding.front.component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.handcoding.front.api.admin.AdminClientClient;
 import com.handcoding.front.api.admin.AdminLoginClient;
 import com.handcoding.front.api.system.SystemLoginClient;
 import com.handcoding.front.api.system.SystemSignUpClient;
@@ -32,6 +33,8 @@ public class ClientComponent {
 	// admin
 	@Autowired
 	private AdminLoginClient adminLoginClient;
+	@Autowired
+	private AdminClientClient adminClientClient;
 	
 	
 	public UserSignUpClient getUserSignUpClient() {
@@ -48,6 +51,9 @@ public class ClientComponent {
 	}
 	public AdminLoginClient getAdminLoginClient() {
 		return adminLoginClient;
+	}
+	public AdminClientClient getAdminClientClient() {
+		return adminClientClient;
 	}
 	
 }

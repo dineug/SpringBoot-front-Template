@@ -28,7 +28,7 @@ public class AdminLoginController {
 	/**
 	 * 로그인 페이지
 	 * @param session
-	 * @return
+	 * @return view
 	 */
 	@GetMapping("/p/login")
 	public String loginPage(HttpSession session) {
@@ -52,6 +52,20 @@ public class AdminLoginController {
 		}
 		respVO.setResponse(null);
 		return respVO;
+	}
+	
+	/**
+	 * 로그아웃 처리 및 페이지
+	 * @param session
+	 * @return view
+	 */
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		// 현재 user와 admin이 같이 쓰기때문에 개별로 지움
+		session.removeAttribute("admin");
+		session.removeAttribute("adminToken");
+//		session.invalidate();
+		return "admin/login";
 	}
 	
 }

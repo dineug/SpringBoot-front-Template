@@ -31,11 +31,11 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">REST API</li>
+        <li class="header">Management</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-firefox"></i> <span>Client</span></a></li>
-        <li class="header">User</li>
-        <li><a href="#"><i class="fa fa-users"></i> <span>User</span></a></li>
+        <li id="sidebarClient" class="active"><a href="#"><i class="fa fa-firefox"></i> <span>Client</span></a></li>
+        <li id="sidebarUser"><a href="#"><i class="fa fa-users"></i> <span>User</span></a></li>
+        <li class="header"><a href="/admin/logout"><i class="fa fa-circle-o text-red"></i> <span>Logout</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

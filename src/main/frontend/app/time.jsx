@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+// 시간 컴포넌트
 
 class Time extends Component {
     constructor( props ) {

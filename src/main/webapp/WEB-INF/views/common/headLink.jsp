@@ -82,5 +82,6 @@
 	
 	
 	<script src="/res/js/common/utils.js"></script>
+	<script src="/res/js/common/sidebar-menu.js"></script>
 	
 		

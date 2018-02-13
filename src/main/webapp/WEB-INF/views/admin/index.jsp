@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<jsp:include page="../common/headLink.jsp" />
+	<!-- React -->
+	<script src="/res/bundle.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper" style="overflow-y: hidden;">
@@ -15,17 +16,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
-			<section class="content-header">
-				<h1>
-					Page Header <small>Optional description</small>
-				</h1>
-			</section>
+			<section class="content-header"></section>
 
 			<!-- Main content -->
 			<section class="content container-fluid">
-
-				<div id="root"></div>
-				
 
 				<!--------------------------
 		        | Your Page Content Here |
@@ -39,7 +33,8 @@
 
 		<jsp:include page="../common/footer.jsp" />
 	</div>
-	<!-- React -->
-	<script src="/res/bundle.js"></script>
+	
+
+	
 </body>
 </html>

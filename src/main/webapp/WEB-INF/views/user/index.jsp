@@ -3,6 +3,8 @@
 <html>
 <head>
 	<jsp:include page="../common/headLink.jsp" />
+	<!-- React -->
+	<script src="/res/bundle.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -15,17 +17,10 @@
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
-			<section class="content-header">
-				<h1>
-					Page Header <small>Optional description</small>
-				</h1>
-			</section>
+			<section class="content-header"></section>
 
 			<!-- Main content -->
 			<section class="content container-fluid">
-
-				<div id="root"></div>
-				<script src="/res/bundle.js"></script>
 
 				<!--------------------------
 		        | Your Page Content Here |
