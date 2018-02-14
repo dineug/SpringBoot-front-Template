@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 // 컨텐츠 해더
-
 class ContentHeader extends Component {
     render() {
         return (

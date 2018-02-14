@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.handcoding.front.component.CommonComponent;
+import com.handcoding.front.domain.ApiClientAuthVO;
 import com.handcoding.front.domain.ResponseVO;
 import com.handcoding.front.domain.SearchVO;
 import com.handcoding.front.domain.out.OutOauthClientApiAuthVO;
@@ -32,6 +33,15 @@ public class AdminClientClient {
 	 */
 	public ResponseVO<List<OutOauthClientApiAuthVO>> clientList(SearchVO searchVO) {
 		return create().clientList(searchVO);
+	}
+	
+	/**
+	 * client API scope 변경
+	 * @param apiClientAuthVO
+	 * @return
+	 */
+	public ResponseVO<Object> clientApiUpdate(ApiClientAuthVO apiClientAuthVO) {
+		return create().clientApiUpdate(apiClientAuthVO);
 	}
 	
 }

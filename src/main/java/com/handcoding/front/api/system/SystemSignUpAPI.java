@@ -35,9 +35,7 @@ public class SystemSignUpAPI extends EndpointAPI<SystemSignUp> {
 		Call<ResponseVO<Object>> call = this.create().emailConfirm(accessToken, emailConfirmVO);
 		try {
 			Response<ResponseVO<Object>> resopnse = call.execute();
-			if(resopnse.isSuccessful()) {
-				return resopnse.body();
-			}
+			return resopnse.body();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

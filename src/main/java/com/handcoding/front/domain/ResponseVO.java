@@ -11,6 +11,11 @@ public class ResponseVO<T> {
 	private String message;
 	private boolean check = true;
 	private T response;
+	
+	public ResponseVO() {}
+	public ResponseVO(boolean check) {
+		this.check = check;
+	}
 	public int getCode() {
 		return code;
 	}

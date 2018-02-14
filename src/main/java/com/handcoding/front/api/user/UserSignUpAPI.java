@@ -35,9 +35,7 @@ public class UserSignUpAPI extends EndpointAPI<UserSignUp> {
 		Call<ResponseVO<Object>> call = this.create().signUp(accessToken, inUserSignUpVO);
 		try {
 			Response<ResponseVO<Object>> resopnse = call.execute();
-			if(resopnse.isSuccessful()) {
-				return resopnse.body();
-			}
+			return resopnse.body();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

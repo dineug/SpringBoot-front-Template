@@ -35,13 +35,11 @@ public class SystemLoginAPI extends EndpointAPI<SystemLogin> {
 		Call<ResponseVO<UserVO>> call = this.create().getUser(accessToken, token);
 		try {
 			Response<ResponseVO<UserVO>> resopnse = call.execute();
-			if(resopnse.isSuccessful()) {
-				return resopnse.body();
-			}
+			return resopnse.body();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return new ResponseVO<>(false);
 	}
 	
 }

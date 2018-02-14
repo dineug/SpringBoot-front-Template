@@ -7,16 +7,17 @@ import com.handcoding.front.domain.OauthClientDetailsVO;
 
 public class OutOauthClientApiAuthVO extends OauthClientDetailsVO {
 	
-	private List<ApiVO> apiVO;
+	private List<ApiVO> apiList;
 
-	public List<ApiVO> getApiVO() {
-		return apiVO;
+	public List<ApiVO> getApiList() {
+		return apiList;
 	}
-	public void setApiVO(List<ApiVO> apiVO) {
-		this.apiVO = apiVO;
+	public void setApiList(List<ApiVO> apiList) {
+		this.apiList = apiList;
 	}
 	@Override
 	public String toString() {
-		return "OutOauthClientApiAuthVO [apiVO=" + apiVO + "]";
+		return "OutOauthClientApiAuthVO [apiList=" + apiList + "]";
 	}
+	
 }

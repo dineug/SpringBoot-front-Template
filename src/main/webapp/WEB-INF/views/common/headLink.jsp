@@ -3,7 +3,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+	<link rel="icon" href="/res/img/favicon.png">
+	
 	<title>handcoding</title>
 	
 	<!-- Tell the browser to be responsive to screen width -->
@@ -80,6 +81,8 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="/res/adminlte2/dist/js/demo.js"></script>
 	
+	<link href="/res/bootstrap3/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<script src="/res/bootstrap3/js/bootstrap-toggle.min.js"></script>
 	
 	<script src="/res/js/common/utils.js"></script>
 	<script src="/res/js/common/sidebar-menu.js"></script>
