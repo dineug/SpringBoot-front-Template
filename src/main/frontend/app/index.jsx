@@ -24,6 +24,8 @@ $( function() {
             
             ReactDOM.render( <ContentHeader>User</ContentHeader>, document.querySelector( '.content-header' ) );
             
+            ReactDOM.render( <div>TEST</div>, document.querySelector( '.container-fluid' ) );
+            
         } );
 
 

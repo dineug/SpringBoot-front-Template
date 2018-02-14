@@ -7,7 +7,6 @@ class Client extends Component {
         super( props );
         this.handleClick = this.handleClick.bind( this );
         this.apiTagList = this.apiTagList.bind( this );
-        this.handleSuccess = this.handleSuccess.bind( this );
     }
     
     handleClick( e ) {
@@ -70,37 +69,34 @@ class Client extends Component {
                 url: '/admin/clients/api',
                 type: 'put',
                 data: self.api,
-                success: self.handleSuccess
+                success: function(obj){
+                    if (obj.check) {
+                        let apis;
+                        let len = self.props.list.length;
+                        for ( var i = 0; i < len; i++ ) {
+                            if ( self.api.client_id === self.props.list[i].client_id ) {
+                                apis = self.props.list[i].apiList;
+                                break;
+                            }
+                        }
+                        if(apis) {
+                            len = apis.length;
+                            for ( var i = 0; i < len; i++ ) {
+                                if ( self.api.apiTypeCode === apis[i].apiTypeCode
+                                        && self.api.method === apis[i].method
+                                        && self.api.url === apis[i].url) {
+                                    apis[i].scope = self.api.scope;
+                                    break;
+                                }
+                            }
+                        }
+                    }else {
+                        alert('변경실패');
+                    }
+                },
             } );
         });
         $( '#apiList' ).modal();
-    }
-    
-    handleSuccess(obj) {
-        if (obj.check) {
-            let apis;
-            let client_id = this.api.client_id;
-            let len = this.props.list.length;
-            for ( var i = 0; i < len; i++ ) {
-                if ( client_id === this.props.list[i].client_id ) {
-                    apis = this.props.list[i].apiList;
-                    break;
-                }
-            }
-            if(apis) {
-                len = apis.length;
-                for ( var i = 0; i < len; i++ ) {
-                    if ( this.api.apiTypeCode === apis[i].apiTypeCode
-                            && this.api.method === apis[i].method
-                            && this.api.url === apis[i].url) {
-                        apis[i].scope = this.api.scope;
-                        break;
-                    }
-                }
-            }
-        }else {
-            alert('변경실패');
-        }
     }
     
     render() {
