@@ -37,7 +37,7 @@ public class TokenAOP {
 	
 	@Around("execution(* com..*Controller.*(.., @com.handcoding.front.annotation.UserToken (*) ,..))")
 	public Object userToken(final ProceedingJoinPoint j) throws Throwable {
-		logger.info("===========================================\t@AdminToken 시작\t=====================================");
+		logger.info("===========================================\t@UserToken 시작\t=====================================");
 		HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 		TokenVO tokenVO = (TokenVO) req.getSession().getAttribute("userToken");
 		Object[] args = Arrays.stream(j.getArgs()).map(data -> { if(data instanceof TokenVO) {data = tokenVO;} return data; }).toArray();
