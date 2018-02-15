@@ -44,8 +44,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 		if(domain.indexOf("/") != -1) {
 			domain = domain.substring(0, domain.indexOf("/"));
 		}
-		boolean userCheck = req.getSession().getAttribute("user") == null;
-		boolean adminCheck = req.getSession().getAttribute("admin") == null;
+		boolean userCheck = req.getSession().getAttribute("userToken") == null;
+		boolean adminCheck = req.getSession().getAttribute("adminToken") == null;
 		boolean check = true;
 		TokenVO tokenVO = null;
 		if(domain.equals("user")) {

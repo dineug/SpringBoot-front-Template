@@ -13,7 +13,6 @@ import com.handcoding.front.component.ClientComponent;
 import com.handcoding.front.component.CommonComponent;
 import com.handcoding.front.domain.ResponseVO;
 import com.handcoding.front.domain.TokenVO;
-import com.handcoding.front.domain.UserVO;
 import com.handcoding.front.domain.in.InUserLoginVO;
 
 @Controller
@@ -47,12 +46,10 @@ public class AdminLoginController {
 	public ResponseVO<String> login(HttpSession session, InUserLoginVO inUserLoginVO) {
 		ResponseVO<String> respVO = client.getAdminLoginClient().login(inUserLoginVO);
 		if(respVO.isCheck()) {
-			ResponseVO<UserVO> userVO = client.getSystemLoginClient().getUser(respVO.getResponse());
-			session.setAttribute("admin", userVO.getResponse());
 			TokenVO tokenVO = new TokenVO(respVO.getResponse());
 			session.setAttribute("adminToken", tokenVO);
+			respVO.setResponse(null);
 		}
-		respVO.setResponse(null);
 		return respVO;
 	}
 	
@@ -64,7 +61,6 @@ public class AdminLoginController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		// 현재 user와 admin이 같이 쓰기때문에 개별로 지움
-		session.removeAttribute("admin");
 		session.removeAttribute("adminToken");
 //		session.invalidate();
 		return "admin/login";
