@@ -67,7 +67,7 @@ class Client extends Component {
             };
             $.ajax( {
                 url: '/admin/clients/api',
-                type: 'put',
+                type: 'post',
                 data: self.api,
                 success: function(obj){
                     if (obj.check) {
@@ -92,6 +92,9 @@ class Client extends Component {
                         }
                     }else {
                         alert('변경실패');
+                        if(obj.check === undefined) {
+                            location.reload();
+                        }
                     }
                 },
             } );

@@ -47,6 +47,10 @@ function clientAjax() {
         success: function(obj){
             if ( obj.check ) {
                 ReactDOM.render( <Client list={obj.response} />, document.querySelector( '.container-fluid' ) );
+            }else {
+                if(obj.check === undefined) {
+                    location.reload();
+                }
             }
         }
     } );

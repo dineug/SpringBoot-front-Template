@@ -20,7 +20,7 @@ public class UtilBean {
 	 * @return
 	 */
 	public String pageCheck(HttpSession session, String domain, String view) {
-		boolean check = session.getAttribute(domain) != null;
+		boolean check = session.getAttribute(domain+"Token") != null;
 		String redirect = "redirect:/"+domain;
 		return check ? redirect : view;
 	}

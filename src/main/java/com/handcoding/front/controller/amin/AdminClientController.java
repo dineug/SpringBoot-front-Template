@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -41,7 +40,7 @@ public class AdminClientController {
 	 * @param apiClientAuthVO
 	 * @return
 	 */
-	@PutMapping("/clients/api")
+	@PostMapping("/clients/api")
 	@ResponseBody
 	public ResponseVO<Object> clientsApiUpdate(@AdminToken TokenVO tokenVO, ApiClientAuthVO apiClientAuthVO) {
 		return client.getAdminClientClient().clientApiUpdate(tokenVO.getToken(), apiClientAuthVO);
