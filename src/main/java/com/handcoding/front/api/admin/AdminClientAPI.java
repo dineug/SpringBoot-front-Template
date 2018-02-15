@@ -34,11 +34,11 @@ public class AdminClientAPI extends EndpointAPI<AdminClient>{
 	 * @param searchVO
 	 * @return
 	 */
-	public ResponseVO<List<OutOauthClientApiAuthVO>> clientList(SearchVO searchVO) {
+	public ResponseVO<List<OutOauthClientApiAuthVO>> clientList(String token, SearchVO searchVO) {
 		String accessToken = this.oauth();
 		try {
 			Map<String, Object> map = objUtil.convertObjectToMap(searchVO);
-			Call<ResponseVO<List<OutOauthClientApiAuthVO>>> call = this.create().clientList(accessToken, map);
+			Call<ResponseVO<List<OutOauthClientApiAuthVO>>> call = this.create().clientList(accessToken, token, map);
 			Response<ResponseVO<List<OutOauthClientApiAuthVO>>> resopnse = call.execute();
 			return resopnse.body();
 		} catch (Exception e) {
@@ -52,9 +52,9 @@ public class AdminClientAPI extends EndpointAPI<AdminClient>{
 	 * @param apiClientAuthVO
 	 * @return
 	 */
-	public ResponseVO<Object> clientApiUpdate(ApiClientAuthVO apiClientAuthVO) {
+	public ResponseVO<Object> clientApiUpdate(String token, ApiClientAuthVO apiClientAuthVO) {
 		String accessToken = this.oauth();
-		Call<ResponseVO<Object>> call = this.create().clientApiUpdate(accessToken, apiClientAuthVO);
+		Call<ResponseVO<Object>> call = this.create().clientApiUpdate(accessToken, token, apiClientAuthVO);
 		try {
 			Response<ResponseVO<Object>> resopnse = call.execute();
 			return resopnse.body();

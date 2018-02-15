@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.handcoding.front.annotation.AdminToken;
 import com.handcoding.front.component.ClientComponent;
 import com.handcoding.front.domain.ApiClientAuthVO;
 import com.handcoding.front.domain.ResponseVO;
 import com.handcoding.front.domain.SearchVO;
+import com.handcoding.front.domain.TokenVO;
 import com.handcoding.front.domain.out.OutOauthClientApiAuthVO;
 
 @Controller
@@ -30,8 +32,8 @@ public class AdminClientController {
 	 */
 	@PostMapping("/clients")
 	@ResponseBody
-	public ResponseVO<List<OutOauthClientApiAuthVO>> clients(SearchVO searchVO) {
-		return client.getAdminClientClient().clientList(searchVO);
+	public ResponseVO<List<OutOauthClientApiAuthVO>> clients(@AdminToken TokenVO tokenVO, SearchVO searchVO) {
+		return client.getAdminClientClient().clientList(tokenVO.getToken(), searchVO);
 	}
 	
 	/**
@@ -41,8 +43,8 @@ public class AdminClientController {
 	 */
 	@PutMapping("/clients/api")
 	@ResponseBody
-	public ResponseVO<Object> clientsApiUpdate(ApiClientAuthVO apiClientAuthVO) {
-		return client.getAdminClientClient().clientApiUpdate(apiClientAuthVO);
+	public ResponseVO<Object> clientsApiUpdate(@AdminToken TokenVO tokenVO, ApiClientAuthVO apiClientAuthVO) {
+		return client.getAdminClientClient().clientApiUpdate(tokenVO.getToken(), apiClientAuthVO);
 	}
 	
 }

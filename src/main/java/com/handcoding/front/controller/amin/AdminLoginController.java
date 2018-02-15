@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.handcoding.front.component.ClientComponent;
 import com.handcoding.front.component.CommonComponent;
 import com.handcoding.front.domain.ResponseVO;
+import com.handcoding.front.domain.TokenVO;
 import com.handcoding.front.domain.UserVO;
 import com.handcoding.front.domain.in.InUserLoginVO;
 
@@ -48,7 +49,8 @@ public class AdminLoginController {
 		if(respVO.isCheck()) {
 			ResponseVO<UserVO> userVO = client.getSystemLoginClient().getUser(respVO.getResponse());
 			session.setAttribute("admin", userVO.getResponse());
-			session.setAttribute("adminToken", respVO.getResponse());
+			TokenVO tokenVO = new TokenVO(respVO.getResponse());
+			session.setAttribute("adminToken", tokenVO);
 		}
 		respVO.setResponse(null);
 		return respVO;

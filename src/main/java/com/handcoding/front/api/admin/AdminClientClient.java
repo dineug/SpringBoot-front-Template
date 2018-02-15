@@ -31,8 +31,8 @@ public class AdminClientClient {
 	 * @param searchVO
 	 * @return
 	 */
-	public ResponseVO<List<OutOauthClientApiAuthVO>> clientList(SearchVO searchVO) {
-		return create().clientList(searchVO);
+	public ResponseVO<List<OutOauthClientApiAuthVO>> clientList(String token, SearchVO searchVO) {
+		return create().clientList(token, searchVO);
 	}
 	
 	/**
@@ -40,8 +40,8 @@ public class AdminClientClient {
 	 * @param apiClientAuthVO
 	 * @return
 	 */
-	public ResponseVO<Object> clientApiUpdate(ApiClientAuthVO apiClientAuthVO) {
-		return create().clientApiUpdate(apiClientAuthVO);
+	public ResponseVO<Object> clientApiUpdate(String token, ApiClientAuthVO apiClientAuthVO) {
+		return create().clientApiUpdate(token, apiClientAuthVO);
 	}
 	
 }

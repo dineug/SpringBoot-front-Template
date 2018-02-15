@@ -28,7 +28,7 @@ public interface AdminClient {
 	 * @return
 	 */
 	@GET("/admin/v1.0/clients")
-	public Call<ResponseVO<List<OutOauthClientApiAuthVO>>> clientList(@Header("accessToken") String accessToken, @QueryMap Map<String, Object> map);
+	public Call<ResponseVO<List<OutOauthClientApiAuthVO>>> clientList(@Header("accessToken") String accessToken, @Header("token") String token, @QueryMap Map<String, Object> map);
 	
 	/**
 	 * client API scope 변경
@@ -37,6 +37,6 @@ public interface AdminClient {
 	 * @return
 	 */
 	@PUT("/admin/v1.0/clients/api")
-	public Call<ResponseVO<Object>> clientApiUpdate(@Header("accessToken") String accessToken, @Body ApiClientAuthVO apiClientAuthVO);
+	public Call<ResponseVO<Object>> clientApiUpdate(@Header("accessToken") String accessToken, @Header("token") String token, @Body ApiClientAuthVO apiClientAuthVO);
 	
 }

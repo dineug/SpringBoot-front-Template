@@ -11,6 +11,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.handcoding.front.component.ClientComponent;
+import com.handcoding.front.domain.TokenVO;
 
 /**
  * 도메인별 로그인 체크
@@ -46,23 +47,23 @@ public class LoginInterceptor implements HandlerInterceptor {
 		boolean userCheck = req.getSession().getAttribute("user") == null;
 		boolean adminCheck = req.getSession().getAttribute("admin") == null;
 		boolean check = true;
-		String token;
+		TokenVO tokenVO = null;
 		if(domain.equals("user")) {
 			if(userCheck) {
 				resp.sendRedirect("/user/p/login");
 				check = false;
 			}else {
 				// REST API token 시간 갱신
-				token = (String) req.getSession().getAttribute("userToken");
-				client.getSystemLoginClient().getUser(token);
+				tokenVO = (TokenVO) req.getSession().getAttribute("userToken");
+				client.getSystemLoginClient().getUser(tokenVO.getToken());
 			}
 		}else if(domain.equals("admin")) {
 			if(adminCheck) {
 				resp.sendRedirect("/admin/p/login");
 				check = false;
 			}else {
-				token = (String) req.getSession().getAttribute("adminToken");
-				client.getSystemLoginClient().getUser(token);
+				tokenVO = (TokenVO) req.getSession().getAttribute("adminToken");
+				client.getSystemLoginClient().getUser(tokenVO.getToken());
 			}
 		}else {
 			resp.sendRedirect("/user/p/login");
